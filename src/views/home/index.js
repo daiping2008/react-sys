@@ -1,12 +1,10 @@
 import React from 'react'
-
+import PageTitle from '../../components/page-title'
 class Home extends React.Component {
   render() {
     return (
       <div>
-        <div className='navbar navbar-expand-lg navbar-light bg-light'>
-          <div className='container'></div>
-        </div>
+        <PageTitle title='首页' />
       </div>
     )
   }

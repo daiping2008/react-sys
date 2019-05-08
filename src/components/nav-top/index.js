@@ -1,23 +1,17 @@
 import React from 'react'
-
+import {Link} from 'react-router-dom'
 class NavTop extends React.Component {
   render() {
     return (
-      <div className='navbar row no-gutters navbar-default bg-white fixed-top top-bar p-0'>
-        <div className='col-2 bg-dark'>
-          <span className='navbar-brand text-primary'>黑兔纸</span>
+      <div className='navbar fixed-top bg-dark text-light header'>
+        <Link to='/' className='navbar-brand'>React</Link>
+        <div className='dropdown btn-group' data-toggle='dropdown'>
+          <Link to='/login'>登录</Link>
+          <a href='#' className='dropdown-toggle' data-toggle='dropdown' data-offset='10'><span className='sr-only'>登录</span></a>
+          <div className='dropdown-menu dropdown-menu-right'>
+            <div className=''>退出登录</div>
+          </div>
         </div>
-        <div className='col-10'>
-          <ul className='nav justify-content-end'>
-            <li className='nav-item dropdown'>
-              <a className='nav-link active dropdown' href='#'>Susan</a>
-              <div className='dropdown-menu '>
-                <a className='dropdown-item'>退出登录</a>
-              </div>
-            </li>
-          </ul>
-        </div>
-        
       </div>
     )
   }

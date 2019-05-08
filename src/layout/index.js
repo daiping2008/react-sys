@@ -12,12 +12,12 @@ class Layout extends React.Component{
             <NavTop/>
           </div>
         </div>
-        <div className='row mt-5 no-gutters'>
-          <div className='col-2'>
+        <div className='row content no-gutters'>
+          <div className='col-md-2'>
             <NavSide/>
           </div>
-          <div className='col-10'>
-          {this.props.children}
+          <div className='col-md-10'>
+            {this.props.children}
           </div>
         </div>
       </div>
