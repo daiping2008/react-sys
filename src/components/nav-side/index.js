@@ -53,13 +53,13 @@ class NavSide extends React.Component {
   renderNavbar() {
     return this.state.navList.map((v, idx) => {
       return (
-        <li className='nav-item'>
+        <li key={idx} className='nav-item'>
           {
             v.children && v.children.length > 0 ? (
               <Link exact to={v.path} className='nav-link rounded-0 text-light px-0' data-toggle='collapse' data-target={`#collapse-${idx}`}>
                 <i className={`fa ${v.icon} mx-3`}></i>
                 <span>{v.name}</span>
-                <i className="fa fa-angle-down float-right pr-3" aria-hidden="true"></i>
+                <i className="fa fa-angle-down float-right pr-3"></i>
               </Link>
             ) 
             : (
@@ -73,9 +73,9 @@ class NavSide extends React.Component {
             <div className='collapse' id={`collapse-${idx}`} data-parent='#according'>
               <ul className='nav flex-column'>
                 {
-                  v.children.map(d => {
+                  v.children.map((d,i) => {
                     return (
-                      <li className='nav-item '>
+                      <li key={i} className='nav-item '>
                         <NavLink className='nav-link rounded-0 text-light pl-5' to={d.path}>{d.name}</NavLink>
                       </li>
                     )
@@ -93,7 +93,7 @@ class NavSide extends React.Component {
     return (
       <div className='navbar navbar-side hidden-md navbar-expand-md nav-pills bg-dark p-0' id='according'>
         <button className="navbar-toggler bg-primary ml-3 align-items-end" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-          <i className="fa fa-bars text-light" aria-hidden="true"></i>
+          <i className="fa fa-bars text-light"></i>
         </button>
         <div className='w-100 collapse navbar-collapse' id='navbarSupportedContent'>
           <ul className='navbar-nav flex-column w-100'>
@@ -102,64 +102,6 @@ class NavSide extends React.Component {
             }
           </ul>
         </div>
-        {/* <div className='w-100 collapse navbar-collapse' id='navbarSupportedContent'>
-          <ul className='navbar-nav flex-column w-100'>
-            <li className='nav-item'>
-              <NavLink exact to='/' className='nav-link rounded-0 text-light pl-0'>
-                <i className="fa fa-dashboard mx-3"></i>
-                <span>首页</span>
-              </NavLink>
-            </li>
-
-            <li className='nav-item'>
-              <Link to='/product' className='nav-link rounded-0 text-light pr-3 pl-0' data-toggle='collapse' data-target='#product-collapse'>
-                <i className="fa fa-list mx-3"></i>
-                <span>商品</span>
-                <i className="fa fa-angle-down float-right" aria-hidden="true"></i>
-              </Link>
-              <div className='collapse' id='product-collapse' data-parent='#according'>
-                <ul className='nav flex-column'>
-                  <li className='nav-item '>
-                    <NavLink className='nav-link rounded-0 text-light pl-5' to='/product'>品类管理</NavLink>
-                  </li>
-                  <li className='nav-item'>
-                    <NavLink className='nav-link rounded-0 text-light pl-5' to='/product-category'>品类管理</NavLink>
-                  </li>
-                </ul>
-              </div>
-            </li>
-
-            <li className='nav-item'>
-              <Link to='/order' className='nav-link rounded-0 text-light pr-3 pl-0' data-toggle='collapse' data-target='#order-collapse'>
-                <i className="fa fa-check-square-o mx-3"></i>
-                <span>订单</span>
-                <i className="fa fa-angle-down float-right" aria-hidden="true"></i>
-              </Link>
-              <div className='collapse' id='order-collapse' data-parent='#according'>
-                <ul className='nav flex-column'>
-                  <li className='nav-item'>
-                    <NavLink to='/order' className='nav-link rounded-0 text-light pl-5'>订单管理</NavLink>
-                  </li>
-                </ul>
-              </div>
-            </li>
-
-            <li className='nav-item'>
-              <Link to='/user' className='nav-link rounded-0 text-light pr-3 pl-0' data-toggle='collapse' data-target='#user-collapse'>
-                <i className="fa fa-user-o mx-3"></i>
-                <span>用户</span>
-                <i className="fa fa-angle-down float-right" aria-hidden="true"></i>
-              </Link>
-              <div className='collapse' id='user-collapse' data-parent='#according'>
-                <ul className='nav flex-column'>
-                  <li className='nav-item'>
-                    <NavLink to='/user' className='nav-link rounded-0 text-light pl-5'>用户管理</NavLink>
-                  </li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </div> */}
       </div>
     )
   }
