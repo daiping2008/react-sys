@@ -4,18 +4,25 @@ import Layout from './layout/index'
 import Home from './views/home'
 import Bootcss from './views/bootcss'
 import News from './views/news'
+import Login from './views/login'
 import './assets/styles/global.scss'
 function App() {
   return (
     <div className="App">
       <Router>
-        <Layout>
-          <Switch>
-            <Route path='/' exact component={Home} />
-            <Route path='/bootcss' component={Bootcss} />
-            <Route path='/news' component={News} />
-          </Switch>
-        </Layout>
+        <Switch>
+          <Route path='/login' component={Login} />
+          <Route path='/' render={props => (
+            <Layout>
+              <Switch>
+                <Route path='/' exact component={Home} />
+                <Route path='/bootcss' component={Bootcss} />
+                <Route path='/news' component={News} />
+              </Switch>
+            </Layout>
+          )} />
+        </Switch>
+        
       </Router>
     </div>
   );

@@ -16,7 +16,7 @@ class Layout extends React.Component{
           <div className='col-md-2'>
             <NavSide/>
           </div>
-          <div className='col-md-10'>
+          <div className='col-md-10 p-2'>
             {this.props.children}
           </div>
         </div>
