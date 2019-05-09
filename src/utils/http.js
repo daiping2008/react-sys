@@ -1,4 +1,4 @@
-import config from '../utils/config'
+// import config from '../utils/config'
 
 class HTTP {
   
@@ -7,7 +7,7 @@ class HTTP {
       
       // eslint-disable-next-line no-undef
       $.ajax({
-        url: config.baseUrl + url,
+        url,
         data,
         type: method,
         dataType: 'json',
