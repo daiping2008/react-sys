@@ -1,7 +1,7 @@
 import HTTP from '../utils/http'
 
 
-class User extends HTTP {
+class UserModal extends HTTP {
 
   getUserList(pageNum) {
     return this.request({
@@ -42,4 +42,4 @@ class User extends HTTP {
   }
 }
 
-export default User
+export default UserModal

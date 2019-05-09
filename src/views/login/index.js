@@ -1,9 +1,9 @@
 import React from 'react'
 
-import User from '../../server/user'
+import UserModal from '../../server/user'
 // import Alert from '../../components/alert'
 
-const user = new User()
+const userModal = new UserModal()
 
 class Login extends React.Component {
 
@@ -22,10 +22,10 @@ class Login extends React.Component {
   }
   onSubmit() {
     const {username, password} = this.state
-    const checkRes = user.checkLoginInfo({username, password})
+    const checkRes = userModal.checkLoginInfo({username, password})
     if (checkRes.code === 0) {
-      user.login({username, password}).then(res => {
-        user.setStorage('user', res)
+      userModal.login({username, password}).then(res => {
+        userModal.setStorage('user', res)
         this.props.history.push('/')
       })
     }

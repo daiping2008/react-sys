@@ -1,3 +1,3 @@
 export default {
-  baseUrl: 'http://admintest.happymmall.com'
+  baseUrl: 'http://adminv2.happymmall.com'
 }
