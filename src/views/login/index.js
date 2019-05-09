@@ -15,10 +15,6 @@ class Login extends React.Component {
       error: ''
     }
   }
-  componentDidMount() {
- 
-  }
-
   handleKeyUp(e) {
     if (e.keyCode === 13) {
       this.onSubmit()
@@ -29,6 +25,7 @@ class Login extends React.Component {
     const checkRes = user.checkLoginInfo({username, password})
     if (checkRes.code === 0) {
       user.login({username, password}).then(res => {
+        user.setStorage('user', res)
         this.props.history.push('/')
       })
     }

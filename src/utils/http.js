@@ -25,6 +25,23 @@ class HTTP {
       })
     })
   }
+
+  setStorage(key, value) {
+    const type =  typeof value
+    if (type === 'object') {
+      window.localStorage.setItem(key, JSON.stringify(value))
+    } else if(['number', 'string', 'boolean'].indexOf(type) > -1){
+      window.localStorage.setItem(key, value)
+    }
+  }
+
+  getStorage(key) {
+    return JSON.parse(window.localStorage.getItem(key)) | ''
+  }
+
+  removeStorage(key){
+    window.localStorage.removeItem(key)
+  }
 }
 
 export default HTTP

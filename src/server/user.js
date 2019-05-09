@@ -2,6 +2,15 @@ import HTTP from '../utils/http'
 
 
 class User extends HTTP {
+
+  getUserList(pageNum) {
+    return this.request({
+      url: '/manage/user/list.do',
+      data:{pageNum},
+      method:'POST'
+    })
+  }
+
   login({username, password}) {
     return this.request({
       url:'/manage/user/login.do',
