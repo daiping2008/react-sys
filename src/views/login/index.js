@@ -37,7 +37,6 @@ class Login extends React.Component {
   handleInput(e) {
     const key = e.target.name,
           value = e.target.value
-    console.log(key, value)
     this.setState({
       [key]: value
     })

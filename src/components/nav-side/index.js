@@ -91,16 +91,18 @@ class NavSide extends React.Component {
   }
   render() {
     return (
-      <div className='navbar navbar-side hidden-md navbar-expand-md nav-pills bg-dark p-0' id='according'>
-        <button className="navbar-toggler bg-primary ml-3 align-items-end" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-          <i className="fa fa-bars text-light"></i>
-        </button>
-        <div className='w-100 collapse navbar-collapse' id='navbarSupportedContent'>
-          <ul className='navbar-nav flex-column w-100'>
-            {
-              this.renderNavbar()
-            }
-          </ul>
+      <div className='menu-wrapper bg-dark'>
+        <div className='navbar navbar-side hidden-md navbar-expand-md nav-pills bg-dark p-0' id='according'>
+          <button className="navbar-toggler bg-primary ml-3 align-items-end" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+            <i className="fa fa-bars text-light"></i>
+          </button>
+          <div className='w-100 collapse navbar-collapse' id='navbarSupportedContent'>
+            <ul className='navbar-nav flex-column w-100'>
+              {
+                this.renderNavbar()
+              }
+            </ul>
+          </div>
         </div>
       </div>
     )

@@ -52,7 +52,7 @@ class User extends React.Component {
   render() {
     const {total, pageNum} = this.state
     return (
-      <div>
+      <div className='wrapper'>
         <PageTitle title='用户管理' />
         <TableList tableHeads={['ID', '用户名', '邮箱', '电话', '注册时间']}>
           {this.renderTableBody()}
