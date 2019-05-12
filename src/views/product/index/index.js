@@ -44,8 +44,8 @@ class Product extends React.Component {
     return list.map(v => <tr key={v.id}>
       <td>{v.id}</td>
       <td>
-        <p>{v.name}</p>
-        <p>{v.subtitle}</p>
+        <p className='mb-0'>{v.name}</p>
+        <p className='mb-0'>{v.subtitle}</p>
       </td>
       <td>{v.price}</td>
       <td>
@@ -67,6 +67,7 @@ class Product extends React.Component {
     return (
       <div className='wrapper'>
         <PageTitle title={'商品管理'}/>
+        <Link to='/product/save' className='btn btn-primary'>添加商品</Link>
         <TableList tableHeads={tableHeads}>
           {this.renderTableBody()}
         </TableList>

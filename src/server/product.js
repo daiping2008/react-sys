@@ -8,6 +8,14 @@ class ProductModal extends HTTP {
       method: 'POST'
     })
   }
+
+  getCategory(categoryId = 0) {
+    return this.request({
+      url: '/manage/category/get_category.do',
+      data:{categoryId},
+      method: 'POST'
+    })
+  }
 }
 
 export default ProductModal
